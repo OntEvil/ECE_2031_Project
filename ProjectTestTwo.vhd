@@ -33,9 +33,9 @@ architecture rtl of ProjectTestTwo is
 	signal temp : std_logic_vector(8 downto 0);
 	begin
 	
-	state <= default when (IO_ADDR = "00001100000" and IO_READ = '1') else
-			 inverse when (IO_ADDR ="00001100001" and IO_READ = '1') else
-			 mSigned when (IO_ADDR = "00001100010" and IO_READ = '1') else
+	state <= default	 when (IO_ADDR = "00001100000" and IO_READ = '1') else
+			 inverse	 when (IO_ADDR = "00001100001" and IO_READ = '1') else
+			 mSigned	 when (IO_ADDR = "00001100010" and IO_READ = '1') else
 			 switchCount when (IO_ADDR = "00001100011" and IO_READ = '1') else
 			 none;
 	
@@ -50,7 +50,7 @@ architecture rtl of ProjectTestTwo is
 				IO_DATA <= "000000"&EXT_WIRES(9 DOWNTO 0);
 				
 			when mSigned =>
-			signBit <= EXT_WIRES(9 DOWNTO 9);
+				signBit <= EXT_WIRES(9 DOWNTO 9);
 			
 				if (signBit = "0") then
 					IO_DATA <=  EXT_WIRES;
@@ -66,7 +66,7 @@ architecture rtl of ProjectTestTwo is
 						count := count + 1;
 					end if;
 				end loop;
-				IO_DATA <= std_logic_vector( to_unsigned(count, IO_DATA'length));
+				IO_DATA <= std_logic_vector(to_unsigned(count, IO_DATA'length));
 			
 			when inverse => 
 				IO_DATA <= "000000"&(not EXT_WIRES(9 DOWNTO 0));
