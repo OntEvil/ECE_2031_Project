@@ -7,6 +7,7 @@
 -- 	Number Active	 0x63: Number of high switches in binary
 -- Team L03_3
 -- ECE 2031
+-- 7/23/2026
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all; 
