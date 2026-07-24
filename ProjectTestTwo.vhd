@@ -1,4 +1,4 @@
--- ProjectTestTwo.vhd
+-- ProjectTestTwo.vhd (VHDL)
 -- SCOMP peripheral for switches with four modes.
 -- Each mode can be accessed using a different IO address.
 -- 	Regular			 0x60: The state of the switches as a bit string with high 6 bits as zero
